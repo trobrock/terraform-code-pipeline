@@ -1,0 +1,45 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "ecs:RunTask",
+      "Effect": "Allow",
+      "Condition": {
+        "ArnEquals": {
+          "ecs:cluster": "${cluster_arn}"
+        }
+      },
+      "Resource": [
+        "${task_definition_arn}"
+      ]
+    },
+    {
+      "Action": "iam:PassRole",
+      "Effect": "Allow",
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringLike": {
+          "iam:PassedToService": "ecs-tasks.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Action": [
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:*",
+      "Effect": "Allow"
+    },
+    {
+      "Action": [
+        "codepipeline:PutJobSuccessResult",
+        "codepipeline:PutJobFailureResult"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}
