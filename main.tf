@@ -62,7 +62,7 @@ resource "aws_codebuild_project" "build" {
 
   environment {
     compute_type    = "BUILD_GENERAL1_MEDIUM"
-    image           = "aws/codebuild/docker:18.09.0"
+    image           = "aws/codebuild/amazonlinux2-x86_64-standard:3.0"
     type            = "LINUX_CONTAINER"
     privileged_mode = true
 
