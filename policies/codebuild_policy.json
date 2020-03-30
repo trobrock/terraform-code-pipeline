@@ -43,7 +43,7 @@
         "secretsmanager:GetSecretValue"
       ],
       "Resource": [
-        "arn:aws:secretsmanager:us-east-1:${account_id}:secret:${short_name}/rails/${environment}/*"
+        "arn:aws:secretsmanager:${aws_region}:${account_id}:secret:${short_name}/rails/${environment}/*"
       ]
     }
   ]
