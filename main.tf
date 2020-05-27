@@ -33,6 +33,7 @@ data "template_file" "codebuild_policy" {
   template = file("${path.module}/policies/codebuild_policy.json")
 
   vars = {
+    aws_region        = var.aws_region
     aws_s3_bucket_arn = aws_s3_bucket.source.arn
     short_name        = var.short_name
     environment       = var.environment
