@@ -30,6 +30,12 @@ variable "branch" {
   default     = "master"
 }
 
+variable "build_timeout" {
+  description = "The time in minutes to timeout a codebuild run"
+  type        = number
+  default     = 10
+}
+
 variable "build_environment" {
   type = list(object({
     name  = string

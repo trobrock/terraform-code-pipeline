@@ -48,7 +48,7 @@ resource "aws_iam_role_policy" "codebuild_policy" {
 
 resource "aws_codebuild_project" "build" {
   name          = "${local.name}-codebuild"
-  build_timeout = "10"
+  build_timeout = var.build_timeout
   service_role  = aws_iam_role.codebuild_role.arn
 
   artifacts {
