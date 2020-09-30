@@ -112,9 +112,10 @@ resource "aws_codepipeline" "pipeline" {
       output_artifacts = ["source"]
 
       configuration = {
-        Owner  = var.repo_owner
-        Repo   = var.repo_name
-        Branch = var.branch
+        Owner                = var.repo_owner
+        Repo                 = var.repo_name
+        Branch               = var.branch
+        PollForSourceChanges = false
       }
     }
   }
