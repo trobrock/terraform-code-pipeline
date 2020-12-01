@@ -115,7 +115,7 @@ resource "aws_codepipeline" "pipeline" {
         Owner                = var.repo_owner
         Repo                 = var.repo_name
         Branch               = var.branch
-        PollForSourceChanges = false
+        PollForSourceChanges = var.poll_for_changes
       }
     }
   }

@@ -84,3 +84,9 @@ variable "ecs_security_group_id" {
   type        = string
   default     = null
 }
+
+variable "poll_for_changes" {
+  description = "Use polling for source changes in the code pipeline"
+  type        = bool
+  default     = false
+}
